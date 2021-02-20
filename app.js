@@ -64,6 +64,12 @@ async function main() {
         const removedItemQuery = await circulationRepo.getById(addedItem._id.toString());
         console.log(removedItemQuery);
 
+        const average = await circulationRepo.averageFinalists();
+        console.log(average);
+
+        const averageByChange = await circulationRepo.averageFinalistsByChange();
+        console.log(averageByChange);
+
     } catch (error) {
         console.log(error);
     } finally {
